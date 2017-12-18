@@ -1,0 +1,949 @@
+@charset "UTF-8";
+* {
+	/* De width en height worden berekend aan de hand van content, INCLUSIEF eventuele extra padding en border eigenschappen. */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html {
+	font-size: 100%; /* Font-size van het root-element opgeven, zodat we kunnen rekenen met de REM-unit. 100% komt overeen met 14 à 16 pixels */
+	
+	/* Backgroud fixed om de achtergrond afbeelding op zij plek re houden tijdens scrollen */
+	background: url('../images/smokey-bg.jpg') no-repeat center center fixed;
+	/* cover the whole page, voor meerdere browsers */
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+ 	-o-background-size: cover;
+  	background-size: cover;
+	background-attachment: fixed;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+/******************************
+		WRAPPER CONTAINER 
+******************************/
+.container {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	width: 980px;
+	clear: both; /* Floatgedrag opheffen voor elementen die na .container komen. */
+	overflow: hidden; /* Height collapse tegengaan van .container, indien alle 
+	childs gefloat zijn. */
+}
+
+/******************************
+		HEADER - NAVIGATION 
+******************************/
+.mainHeader {
+	position: relative;
+	top: 0;
+	height: 200px;
+	width: 100%;
+	/* Gradient background voor de header navigatie, voor meerdere browsers */
+	background: -webkit-linear-gradient(left, rgba(34,34,34,0.3), rgba(34,34,34,0.8)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, rgba(34,34,34,0.3), rgba(34,34,34,0.8)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, rgba(34,34,34,0.3), rgba(34,34,34,0.8)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, rgba(34,34,34,0.3), rgba(34,34,34,0.8));
+	border-bottom: 1px solid orangered; /* Orangered, mijn nieuwe lievelingskleur */
+}
+.mainHeader h1 {
+	font-family: 'Snell Roundhand'; /* Passend sierlijk en sjiek font */
+	text-align: center;
+	margin-top: 4%;
+	font-size: 3em;
+	color: #FF4500;
+	font-weight: bold;
+	text-shadow: 1px 1px rgba(205,199,199,0.60);
+	letter-spacing: 3px;
+}
+.mainHeader .container .headAdding {
+	color: #FFFFFF;
+	font-family: "Snell Roundhand";
+	font-size: 1.4rem;
+	letter-spacing: 2px;
+	line-height: 1rem;
+	font-weight: 600;
+	margin-bottom: 2%;
+}
+.mainHeader a:link {
+	text-decoration: none;
+	
+}
+.logo {
+	float: left;
+	top: 0;
+	padding-left: 0;
+	margin-top: 3%;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 0;
+	border-radius: 50%;
+	background-color: rgba(255,69,0,0.70);
+}
+.navigation ul {
+	margin-top: 1%;
+	margin-right: 9%;
+	margin-left: 0;
+	margin-bottom: 1%;
+	text-align: center;
+	padding-bottom: 0.5em;
+}
+.navigation li {
+	display: inline-block;
+	padding-top: 0.3em;
+	padding-right: 0.7em;
+	padding-left: 0.7em;
+	padding-bottom: 0.3em;
+	font-size: 1.8rem;
+	font-family: 'Snell Roundhand';
+	list-style-type: none;
+	letter-spacing: 2px;
+	font-weight: 600;
+}
+.navigation li a:link, .navigation li a:visited {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	padding-right: 8px;
+	color: #ffffff;
+	display: block;
+	text-decoration: none;
+}
+.navigation li a:hover {
+	color: orangered;
+	border-bottom: 2px solid rgba(255,255,255,0.5);
+	border-radius: 3px;
+}
+.navigation li a.active {
+	color: orangered;
+	background-color: rgba(255,255,255,0.5);
+	border-bottom: 2px solid rgba(255,255,255,0.5);
+	border-top: 2px solid rgba(255,255,255,0.5);
+	border-radius: 3px;
+}
+
+/******************************
+		CAROUSEL HOMEPAGE 
+******************************/
+.carousel {
+	height: 19rem;
+	width: 100%;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(../images/rings-collection.jpg);
+	background-color: #f7f7f7;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 55%;
+	border-bottom: 1px solid orangered;
+}
+.carousel h3 {
+	margin-top: 22%;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-variant: small-caps;
+	font-size: 2.5rem;
+	color: #FF4500;
+	background-color: rgba(0,0,0,0.50);
+	margin-left: 5%;
+	font-weight: 600;
+	letter-spacing: 11px;
+	border-radius: 8px;
+	width: 88%;
+}
+
+/******************************
+	MAIN CONTENT HOMEPAGE
+******************************/
+.mainContent {
+	width: 100%;
+	background-color: rgba(174,169,169,0.40);
+	padding-top: 5%;
+	padding-bottom: 5%;
+}
+.mainContent .container .card {
+	float: left;
+	width: 27%;
+	height: 310px;
+	/* Achtergrond donkerder om tekst beter leesbaar te maken */
+	background: -webkit-linear-gradient(left, rgba(34,34,34,0.7), rgba(34,34,34,0.8)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, rgba(34,34,34,0.3), rgba(34,34,34,0.8)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, rgba(34,34,34,0.7), rgba(34,34,34,0.8)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, rgba(34,34,34,0.7), rgba(34,34,34,0.8));
+	margin-top: 3%;
+	margin-right: 3%;
+	margin-left: 3%;
+	margin-bottom: 3%;
+	/*	-webkit-box-shadow: 6px 7px 22px 2px rgba(105,101,101,1.00);*/
+/*	box-shadow: 6px 7px 22px 2px rgba(105,101,101,1.00);*/
+	display: inline-block;
+	text-align: center;
+}
+.mainContent .container .card .cardHeader {
+	text-align: center;
+	font-weight: bold;
+	font-family: "Snell Roundhand";
+	letter-spacing: 5px;
+	border-bottom: 1px solid #7C7A7A;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	background-color: rgba(0,0,0,0.58);
+	margin-top: 0.3em;
+	margin-right: 0.2em;
+	margin-left: 0.2em;
+	font-size: 1.8rem;
+	color: #FFFFFF;
+}
+.mainContent .container .card p {
+	font-weight: lighter;
+	font-size: 1em;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	padding-left: 16px;
+	padding-right: 16px;
+	text-align: left;
+	line-height: 2rem;
+	letter-spacing: 1px;
+	font-style: oblique;
+}
+
+/******************************
+	OVER MIJ PAGE
+******************************/
+.mainContent .container .overMijText {
+	width: 47%;
+	height: 800px;
+	margin-left: 2%;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	padding-top: 22px;
+	padding-bottom: 22px;
+	padding-right: 22px;
+	padding-left: 22px;
+	color: #FFFFFF;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	text-align: left;
+	font-size: 1.1rem;
+	line-height: 25px;
+	background-color: rgba(6,5,5,0.50);
+	border: 1px solid #ffffff;
+	-webkit-box-shadow: -6px 14px 5px 2px rgba(0,0,0,0.30);
+	box-shadow: -6px 14px 5px 2px rgba(0,0,0,0.50);
+	display: inline-block;
+	float: left;
+}
+.container .overMijText h2 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1.2rem;
+	margin-bottom: 5%;
+}
+.container .overMijText h3 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: 600;
+	font-size: 1.1rem;
+	letter-spacing: 1px;
+	font-variant: normal;
+	padding-bottom: 0.3rem;
+}
+.container .overMijText p {
+	padding-bottom: 1rem;
+}
+.container .overMijText blockquote {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-size: 1.1rem;
+	padding-bottom: 1.5rem;
+	text-align: left;
+	font-weight: 400;
+}
+.container .overMijText .creative {
+	color: #FF4500;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+}
+.mainContent .container .isabelImage {
+	margin-top: 3%;
+	margin-bottom: 3%;
+	background-repeat: no-repeat;
+	display: inline-block;
+	float: left;
+	margin-left: 1%;
+}
+.mainContent .container .isabelImage img {
+	border: 1px solid #ffffff;
+	-webkit-box-shadow: -6px 14px 5px 2px rgba(0,0,0,0.30);
+	box-shadow: -6px 14px 5px 2px rgba(0,0,0,0.50);
+	height: 800px;
+	width: 450px;
+}
+
+/******************************
+	CONTACT PAGE
+******************************/
+
+.contact .contactText {
+	padding-left: 2%;
+	margin-top: 5%;
+	margin-right: 0;
+	margin-left: 4%;
+	margin-bottom: 2%;
+	text-align: left;
+}
+.container2 .contact .contactText h2 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 30px;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+}
+.contact h1 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.4rem;
+	line-height: 20%;
+	letter-spacing: 1px;
+	padding-bottom: 6%;
+}
+
+.contact .contactText p {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	letter-spacing: 1px;
+	line-height: 18px;
+	font-size: 1rem;
+	font-weight: 500;
+	font-variant: normal;
+	font-style: normal;
+	text-indent: 3px;
+}
+.contactHeader {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	padding: 10px;
+	font-size: 1.5rem;
+	margin-left: -3%;
+	width: 103%;
+	margin-top: 1%;
+	letter-spacing: 2px;
+}
+#textPart {
+	background-color: rgba(213,209,208,0.40);
+	text-align: left;
+	font-weight: lighter;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	padding-top: 3%;
+	padding-left: 3%;
+	border: 1px solid rgba(255,255,255,0.80);
+	color: #FFFFFF;
+	font-size: 1rem;
+	padding-bottom: 3%;
+	padding-right: 3%;
+}
+.container2 .contact #form {
+	width: 50%;
+	float: left;
+	margin-left: 6%;
+}
+#form #fieldsetB #date , #form #fieldsetB #datum{
+	margin-left: 4%;
+	margin-top: 3%;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-variant: normal;
+	font-weight: 500;
+	font-size: 1rem;
+	letter-spacing: 1px;
+}
+.contact #form #fieldsetA {
+	height: 180px;
+	border: thin solid rgba(255,69,0,1.00);
+	margin-bottom: 5%;
+	margin-top: 0%;
+}
+#form #fieldsetA #naam2, #form #fieldsetA #name2, #form #fieldsetA #email2, #form #fieldsetA #mail2, #form #fieldsetA #phone, #form #fieldsetA #phoneNumber {
+	margin-left: 13px;
+	margin-bottom: 8px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1rem;
+	letter-spacing: 1px;
+	margin-top: 2%;
+	height: 27px;
+}
+#form #fieldsetA #naam2, #form #fieldsetA #mail2 {
+	margin-left: 10%;
+	height: 27px;
+}
+#form #fieldsetA #naam2, #form #fieldsetA #mail2, #form #fieldsetA #mail2 {
+}
+.contact #form #fieldsetB {
+	height: 76px;
+	border: thin solid rgba(255,69,0,1.00);
+	margin-bottom: 5%;
+}
+#form #fieldsetC #opmerking2 {
+	width: 90%;
+	height: 128px;
+	margin-left: 15px;
+	margin-top: 5px;
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-left: 8px;
+	padding-bottom: 8px;
+	margin-bottom: 0px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	letter-spacing: 1px;
+}
+#form legend {
+	padding: 5px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+}
+.contact #form #fieldsetC {
+	height: 174px;
+	border: thin solid rgba(255,69,0,1.00);
+}
+.contact #form #textPart {
+	margin-left: 15%;
+	width: 120%;
+}
+form #versturen1 {
+	width: 100%;
+	margin-left: 0%;
+	height: 40px;
+	font-size: 1rem;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-variant: small-caps;
+	font-weight: 600;
+	background-color: #5FCF80;  /* call to action */
+	margin-top: 2%;
+	text-indent: 0px;
+	border-radius: 2px;
+	letter-spacing: 2px;
+	border: thin solid #5FCF80;
+	color: #FF4500;
+}
+form .verplicht {
+	padding-top: 11px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: italic;
+	font-weight: 300;
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+}
+.container2 .contact .contactInfo {
+	float: right;
+	text-align: left;
+	width: 25%;
+	margin-top: 8%;
+	margin-right: 10%;
+}
+.container2 .contact .contactInfo ul {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-variant: small-caps;
+	font-weight: lighter;
+	margin-bottom: 54px;
+}
+.contactInfo .gegevens li {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: oblique;
+	font-variant: small-caps;
+	font-weight: 500;
+	font-size: 1rem;
+	line-height: 22px;
+	background-color: rgba(0,0,0,0.30);
+	width: 121%;
+	padding-top: 10px;
+	padding-left: 10px;
+	height: 39px;
+	letter-spacing: 1px;
+}
+.contact .contactInfo .icons {
+	background-color: rgba(6,5,5,0.50);
+	width: 122%;
+	padding-top: 9px;
+	height: 40px;
+	border-radius: 2px;
+	margin-top: -10px;
+}
+.contact .contactInfo .icons li {
+	display: inline-block;
+	padding-left: 9px;
+	margin-left: 6%;
+}
+
+/******************************
+	TARIEVEN PAGE
+******************************/
+.container2 {
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	width: 750px;
+	clear: both;
+	overflow: hidden;
+	color: #ffffff;
+	background-color: rgba(6,5,5,0.50);
+	height: auto;
+}
+.container2 .tarieven h2    {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-top: 4%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+.container2 .tarieven h2    {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-top: 4%;
+	margin-bottom: 2%;
+	text-align: left;
+	text-indent: 10%;
+}
+.container2 .tarieven h3    {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	font-size: 1.2rem;
+	font-weight: 400;
+	margin-top: 4%;
+	margin-bottom: 2%;
+	text-align: left;
+	padding-left: 10%;
+	padding-right: 10%;
+	line-height: 1.5rem;
+	font-style: italic;
+}
+.container2 .tarieven p {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	line-height: 1.5rem;
+	text-align: left;
+	font-weight: 400;
+	font-size: 1.1rem;
+	padding-left: 10%;
+	padding-right: 10%;
+	letter-spacing: 1px;
+}
+.container2 .tarieven ul {
+	text-align: left;
+	padding-left: 10%;
+	padding-right: 10%;
+	list-style-type: circle;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.1rem;
+	line-height: 1.5rem;
+	text-indent: 3px;
+	list-style-position: inside;
+	padding-top: 2%;
+}
+.container2 .tarieven .pWrap {
+	padding-left: 2%;
+}
+.container2 .line.top1  {
+	border-top: 1px solid #FF4500;
+	margin-top: 1%;
+	margin-bottom: 2%;
+	width: 79%;
+	margin-left: 9%;
+}
+
+
+/*************************
+	DUMMY PAGE
+************************/
+.dummy {					/*t.b.v. antwoord bij drukken op verzend button */
+	text-align: center;
+	color: #FF4500;
+	font-size: 2rem;
+	margin-top: 30%;
+	font-family: "Snell Roundhand";
+	font-weight: 700;
+	letter-spacing: 2pt;
+	background-color: rgba(255,255,255,0.60);
+	height: 60px;
+	padding-top: 16px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	text-shadow: 1px 1px rgba(0,0,0,0.30);
+}
+main .container2 .dummy1  {
+	font-size: 2rem;
+	font-family: "Snell Roundhand";
+	font-weight: 700;
+	letter-spacing: 2px;
+	color: rgba(255,69,0,1.00);
+	background-color: rgba(255,255,255,0.60);
+	margin-bottom: 28%;
+	height: 50px;
+	text-align: center;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	text-shadow: 1px 1px rgba(0,0,0,0.30);
+}
+
+/******************************
+	WORKSHOP PAGE
+******************************/
+.container2 .certified .terug {
+	float: left;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: lighter;
+	font-size: 1rem;
+	margin-left: 8%;
+	margin-top: -2%;
+}
+.container2 .certified.workshop h2 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.2rem;
+	text-align: center;
+	padding-bottom: 2%;
+	margin-top: 4%;
+	margin-bottom: 0%;
+}
+.container2 .certified.workshop p {
+	text-align: left;
+	padding-left: 10%;
+	padding-right: 10%;
+	line-height: 1.5rem;
+	font-weight: 400;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: 1.1rem;
+	font-variant: normal;
+	letter-spacing: 1px;
+}
+.container2 .line.top  {
+	border-top: 1px solid #FF4500;
+	margin-top: 1%;
+	margin-bottom: 6%;
+	width: 79%;
+	margin-left: 9%;
+}
+.container2 .line.middle  {
+	border-top: 1px solid #FF4500;
+	margin-top: 6%;
+	margin-bottom: 6%;
+	width: 79%;
+	margin-left: 9%;
+}
+.container2 .line.bottom  {
+	border-top: 1px solid #FF4500;
+	margin-top: 6%;
+	margin-bottom: 6%;
+	width: 79%;
+	margin-left: 9%;
+}
+
+.container2 .certified .certifiedImage {
+	padding: 0.5em 0.5em;
+	float: right;
+	margin-right: 2.5%;
+}
+/******************************
+	ZILVERKLEI PAGE
+******************************/
+.container2 .zilverklei h2 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-top: 4%;
+	margin-bottom: 2%;
+	text-align: center;
+}
+.container2 .zilverklei p {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	text-align: left;
+	line-height: 1.5rem;
+	font-weight: 400;
+	padding-left: 10%;
+	padding-right: 10%;
+	font-variant: normal;
+	font-size: 1.1rem;
+	letter-spacing: 1px;
+}
+.container2 .zilverklei ul {
+	float: none;
+	text-align: left;
+	padding-left: 10%;
+	padding-right: 10%;
+	list-style-type: circle;
+	list-style-position: inside;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.1rem;
+	line-height: 1.5rem;
+	letter-spacing: 1px;
+	font-variant: normal;
+}
+.container2 .zilverklei .bottom {
+	margin-bottom: 5%;	
+}
+
+/*********************
+	GALLERY PAGE
+********************/
+#gallery {
+	margin-top: -13px;
+	margin-right: auto;
+	margin-left: 8%;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-bottom: 0px;
+	list-style: none;
+}
+.container2 .galleryHeader h2 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.2rem;
+	text-align: center;
+	margin-top: 4%;
+	margin-bottom: 2%;
+}
+#gallery li {
+	float: left;
+	width: 26%;
+	background-color: rgba(23,22,22,0.30);
+	margin-top: 2%;
+	margin-right: 2%;
+	margin-left: 2%;
+	margin-bottom: 2%;
+	color: #bdc3c7;
+	border: thin solid #FFFFFF;
+}
+#gallery li img {
+	width: 120px;
+	;
+	height: 120px;
+	padding-left: 15px;
+	padding-right: 0px;
+	margin-left: 10%;
+	margin-top: 16%;
+}
+#gallery li a {
+	text-decoration: none;
+}
+#gallery li a p {
+	margin: 0;
+	padding-top: 10%;
+	padding-right: 10%;
+	padding-left: 10%;
+	padding-bottom: 10%;
+	font-size: 1em;
+	color: #FFFFFF;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: 800;
+	text-align: center;
+	font-style: oblique;
+	letter-spacing: 3px;
+	line-height: 9px;
+}
+.container2 #gallery .upSide   {
+	margin-top: 10%;
+}
+#gallery .downSide   {
+	margin-bottom: 10%;
+}
+
+/********************************
+	(GALLERY) KETTINGEN PAGE
+*******************************/
+.kettingen .container2 {
+	height: 700px;
+}
+.kettingen .container2 figure {
+	border: thin solid #FFFFFF;
+	margin-top: 4%;
+	margin-left: 5%;
+	margin-bottom: 1%;
+	width: 27%;
+	height: 39%;
+	float: left;
+}
+.kettingen .container2 h2 {
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 1.2rem;
+	text-align: center;
+	margin-top: 4%;
+	margin-bottom: 2%;
+}
+.kettingen .container2 img {
+}
+.container2 .terug {
+	float: left;
+	margin-top: -3%;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: lighter;
+	font-size: 1rem;
+	margin-left: 8%;
+}
+.kettingen .container2 figure figcaption {
+	text-align: center;
+	padding: 4%;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: lighter;
+	letter-spacing: 0.1rem;
+}
+.kettingen .kettingSelectie figure a {
+	text-decoration: none;
+	color: #ffffff;
+	
+}
+.kettingen .kettingSelectie .enlarge:hover {
+	transform:scale(1.3, 1.3);
+	transform-origin: initial;
+}
+
+/******************************
+		FOOTER 
+******************************/
+.footer {
+	width: 100%;
+	height: 200px;
+	background-color: rgba(0,0,0,0.30);
+	border-top: 1px solid #FF4500;
+}
+footer .toTop {
+	display: block;
+	padding-right: 0;
+	padding-left: 0;
+	margin-top: 0rem;
+}
+.leftSide {    /* logo */
+	display: inline-block;
+	float: left;
+	margin-top: 4%;
+	margin-right: 1%;
+	margin-left: 5%;
+	margin-bottom: 0;
+	border-radius: 50%;
+	background-color: rgba(255,69,0,0.60);
+}
+.footer .container .adres {
+	color: #FFFFFF;
+	margin-top: 4%;
+	margin-left: 0%;
+	float: left;
+	text-align: left;
+	line-height: 22px;
+	margin-right: 0%;
+	background-color: rgba(0,0,0,0.3);
+	border-radius: 5px;
+	font-weight: 500;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-style: oblique;
+	font-variant: small-caps;
+	font-size: 1rem;
+	padding: 5px;
+	letter-spacing: 2px;
+}
+.footerNavigation {
+	float: left;
+	background: rgba(0,0,0,0.3);
+	margin-top: 4%;
+	margin-right: 1.5%;
+	margin-left: 1.5%;
+	border-radius: 5px;
+	padding-top: 14px;
+	padding-right: 14px;
+	padding-left: 14px;
+	padding-bottom: 14px;
+	width: 35%;
+	height: 74px;
+}
+.footerNavigation li {
+	display: inline;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-weight: 500;
+	font-size: 1rem;
+	font-style: oblique;
+	font-variant: small-caps;
+	letter-spacing: 2px;
+	white-space: normal;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	line-height: 17px;
+}
+.footerNavigation li a:link, .footerNavigation li a:visited {
+	color: #ffffff;
+	text-decoration: none;
+	padding: 5px
+}
+.footerNavigation li a:hover {
+	color: orangered;
+	border-bottom: 2px solid rgba(255,255,255,0.5);
+	border-radius: 3px;
+}
+.footerNavigation li a.active {
+	color: orangered;
+	background-color: rgba(255,255,255,0.8);
+	border-bottom: 2px solid orangered;
+	border-top: 2px solid orangered;
+	border-radius: 3px;
+}
+footer .rightSide .footerIcons {
+	float: left;
+	margin-top: 4%;
+	margin-left: 0;
+	margin-bottom: 0;
+	background-color: rgba(255,255,255,0.8);
+	border-radius: 3px;
+	width: 20%;
+}
+footer .rightSide .footerIcons li {
+	display: inline-block;
+	padding: 6px;
+
+}
+footer #search {
+	margin-right: 6%;
+	float: left;
+	width: 16%;
+	margin-top: 1%;
+	height: 21px;
+}
+footer .search {
+	width: 61%;
+}
+footer p small {
+	float: left;
+	clear: left;
+	color: #ffffff;
+	margin-left: 14%;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: 0.8rem;
+	font-weight: lighter;
+	letter-spacing: 2px;
+	line-height: 2rem;
+}
